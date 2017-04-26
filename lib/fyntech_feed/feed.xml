@@ -16,8 +16,22 @@
     <subtitle>{{ site.description | xml_escape }}</subtitle>
   {% endif %}
 
+  {% assign current_date = site.time | date: "%s" %}
   {% assign events = site.events %}
-  {% for event in events limit: 10 %}
+  {% for event in events %}
+
+    {% if event.dateEnd %}
+      {% assign expire_date = event.dateEnd | date: "%s" %}
+    {% else %}
+      {% assign expire_date = event.dateStart | date: "%s" %}
+    {% else %}
+      {% continue %}
+    {% endif %}
+
+    {% if expire_date < current_date %}
+      {% continue %}
+    {% endif %}
+
     <entry>
       <title>{{ event.title | smartify | strip_html | normalize_whitespace | xml_escape }}</title>
 
