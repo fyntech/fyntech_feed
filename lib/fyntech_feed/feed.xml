@@ -22,7 +22,7 @@
 
     {% if event.dateEnd %}
       {% assign expire_date = event.dateEnd | date: "%s" %}
-    {% else %}
+    {% elsif event.dateStart %}
       {% assign expire_date = event.dateStart | date: "%s" %}
     {% else %}
       {% continue %}
