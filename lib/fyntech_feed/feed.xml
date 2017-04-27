@@ -36,11 +36,13 @@
       <title>{{ event.title | smartify | strip_html | normalize_whitespace | xml_escape }}</title>
 
       {% if event.organizer %}
-        <ev:organizer>{{ event.organizer | xml_escape }}</ev:organizer>
+        {% assign organizer = event.organizer | replace: "<br>", " " %}
+        <ev:organizer>{{ organizer | strip_html | normalize_whitespace | xml_escape }}</ev:organizer>
       {% endif %}
 
       {% if event.location %}
-        <ev:location>{{ event.location | xml_escape }}</ev:location>
+        {% assign location = event.location | replace: "<br>", " " %}
+        <ev:location>{{ location | strip_html | normalize_whitespace | xml_escape }}</ev:location>
       {% endif %}
 
       {% if event.dateStart %}
@@ -51,7 +53,7 @@
       {% endif %}
 
       {% if event.excerpt and event.excerpt != empty %}
-        <summary>{{ event.excerpt | strip_html | normalize_whitespace | xml_escape }}</summary>
+        <summary type="html">{{ event.excerpt | normalize_whitespace | xml_escape }}</summary>
       {% endif %}
     </entry>
   {% endfor %}
