@@ -53,7 +53,7 @@
       {% endif %}
 
       {% if event.link %}
-        <link rel="via" href="{{ event.link | url_encode | xml_escape }}" />
+        <link rel="via" href="{{ event.link | xml_escape }}" />
       {% endif %}
 
       {% if event.excerpt and event.excerpt != empty %}
