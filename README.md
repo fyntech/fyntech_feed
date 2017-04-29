@@ -1,6 +1,7 @@
 # FyntechFeed
 
 A Jekyll plugin to generate an Atom (RSS-like) event feed for fyntech.dk
+
 Forked: [jekyll-feed](https://github.com/jekyll/jekyll-feed) by [benbalter](https://github.com/benbalter).
 
 ## Installation
