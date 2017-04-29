@@ -1,8 +1,7 @@
 # FyntechFeed
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/fyntech_feed`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A Jekyll plugin to generate an Atom (RSS-like) event feed for fyntech.dk
+Forked: [jekyll-feed](https://github.com/jekyll/jekyll-feed) by [benbalter](https://github.com/benbalter).
 
 ## Installation
 
@@ -32,10 +31,9 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/fyntech_feed.
+Bug reports and pull requests are welcome on GitHub at https://github.com/fyntech/fyntech_feed.
 
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
