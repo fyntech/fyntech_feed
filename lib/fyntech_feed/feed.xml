@@ -43,7 +43,7 @@
       {% if event.dateStart %}
         <ev:startdate>{{ event.dateStart | date_to_rfc822 }}</ev:startdate>
       {% endif %}
-      
+
       {% if event.dateEnd %}
         <ev:enddate>{{ event.dateEnd | date_to_rfc822 }}</ev:enddate>
       {% endif %}
@@ -53,8 +53,8 @@
         <ev:organizer>{{ organizer | strip_html | normalize_whitespace | xml_escape }}</ev:organizer>
       {% endif %}
 
-      {% if event.link %}
-        <link rel="via" href="{{ event.link | xml_escape }}" />
+      {% if event.link and event.link != empty %}
+        <link rel="via" href="{{ event.link }}" />
       {% endif %}
 
       {% if event.excerpt and event.excerpt != empty %}
